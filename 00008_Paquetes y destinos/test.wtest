@@ -1,0 +1,35 @@
+test 'neo puede entrar a la matrix si tiene crédito' {
+  assert.that(laMatrix.dejaEntrar(neo))
+}
+test 'neo no puede entrar a la matrix cuando tiene poco credito ' {
+  neo.llamar()
+  assert.notThat(laMatrix.dejaEntrar(neo))
+}
+
+test 'neo puede entrar al puente de brooklin' {
+  assert.that(puenteDeBrooklyn.dejaEntrar(neo))
+}
+
+test 'el paquete originalmente está impago' {
+  assert.notThat(paquete.estaPago())
+}
+
+test 'si se paga el paquete, queda pago' {
+  paquete.pagar()
+  assert.that(paquete.estaPago())
+}
+
+test 'el paquete impago no puede ser entregado' {
+  assert.notThat(paquete.puedeSerEntregadoPor(neo))
+}
+
+test 'el paquete pago a la matrix puede ser entregado por neo' {
+  paquete.pagar()
+  assert.that(paquete.puedeSerEntregadoPor(neo))
+}
+
+test 'el paquete pago al puente puede ser entregado por neo' {
+  paquete.destino(puenteDeBrooklyn)
+  paquete.pagar()
+  assert.that(paquete.puedeSerEntregadoPor(neo))
+}

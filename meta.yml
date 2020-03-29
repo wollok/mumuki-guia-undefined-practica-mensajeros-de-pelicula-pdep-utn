@@ -1,0 +1,15 @@
+---
+name: Primera Práctica Objetos y Colecciones
+locale: es
+type: practice
+beta: false
+teacher_info: ''
+language: wollok
+id_format: "%05d"
+order:
+- 7
+- 8
+- 1
+- 3
+- 9
+private: false
